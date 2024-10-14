@@ -10,5 +10,17 @@ Room Security System
   * pi camera
   * motion sensor
   * (optional) led strip
-  * 
+
+# What you'll need (digital)
+* VSCode
+* UNIX commands
+* AWS Services (Mainly S3)
+* SSH/SCP Protocol
+* VSCode SSH extension
+* Python Libraries (Not final):
+  * OpenCV
+  * OpenSfM
+  * gpiozero (Comes with Raspbian standard)
+  * boto3
+  * tello
   
