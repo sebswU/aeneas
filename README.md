@@ -1,6 +1,13 @@
 # Aeneas
 Room Security System
 
+# Exigence
+This is a fitting project for a college freshman living in a co-ed dorm. I trust all the
+people in my dorm hall way too much (since they're all pretty chill), but it's good to have 
+a little security and a little fun testing some cool stuff out with some friends. In addition,
+this project demonstrates knowledge in classical computer vision techniques, as well as 
+microcontroller development and IoT system management via tunneling and cloud applications.
+
 
 # What you'll need (physical)
 * two raspberry pis (used here is 3B and 5)
@@ -15,15 +22,13 @@ Room Security System
 
 # What you'll need (digital)
 * VSCode
-* UNIX commands
+* UNIX-based terminal
 * AWS Services (Mainly S3)
-* SSH/SCP Protocol
 * VSCode SSH extension
 * Python Libraries (Not final):
   * OpenCV
-  * OpenSfM
   * gpiozero (Comes with Raspbian standard)
-  * boto3
+  * boto3 (connect to AWS)
   * tello
 
 
@@ -94,6 +99,16 @@ about the image to S3 and probably DynamoDB as well. (I haven't decided whether 
 use gateway or interface endpoint connection.) The images of the culprit from 
 the drone will be the traffic. It will only be sent on there if the third outcome is true.
 
+# Display Culprit
+The physical modules associated with this section are a monitor, keyboard, and mouse.
 
+The most common library associated with this module-stage likely will involve DOM components 
+and will therefore not be discussed in detail until the former parts of the project are close 
+to complete. Next.js and React.js will likely be involved here.
+
+Basically, this is the interface that will display all of the pictures taken by the drone and 
+the metadata containing the time and reasoning for the picture being taken (person not 
+verified, time ran out, person did not turn to look). If the tab is kept open during 
+surveilence, an interactive graphics interface will complement the LED lighting as a visual.
 
 
