@@ -23,3 +23,5 @@ def activate():
     picam2.start()
     sleep(2)
     picam2.capture_file(f"images/test{count}.jpg")
+    picam2.stop_preview()
+

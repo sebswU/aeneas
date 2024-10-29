@@ -15,7 +15,7 @@ red = LED(8)
 white = LED(25)
 
 print("waiting for no motion")
-#pir.wait_for_no_motion()
+pir.wait_for_no_motion()
 
 while True:
     white.off()
@@ -30,3 +30,5 @@ while True:
     sleep(2)
     
     
+if __name__=="__main__":
+    pass
