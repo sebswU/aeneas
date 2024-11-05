@@ -1,1 +1,4 @@
 src/faceDetect/images/*
+**/lib
+**/bin
+**/dist
