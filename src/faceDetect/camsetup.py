@@ -4,7 +4,7 @@ import time
 from time import sleep
 
 def settingup():
-"""sets up the camera, do this before running any other apps"""
+	"""sets up the camera, do this before running any other apps"""
 	picam2 = Picamera2()
 	camera_config = picam2.create_preview_configuration()
 	picam2.configure(camera_config)

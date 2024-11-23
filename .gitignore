@@ -1,2 +1,6 @@
 src/faceDetect/images/
-dist/
+**/dist/*
+**/lib/*
+**/bin/*
+**/.env
+
