@@ -41,6 +41,12 @@ microcontroller, and an LCD monitor. The LED strips will wrap around the edges o
 the ceiling or one of the walls.
 Both RPis will be connected via VPC to Amazon AWS S3 buckets.
   
+# Setup (Work in progress, may change)
+First, fork and clone repo on your Raspberry Pi (3B+).
+Second, go to your repo directory and then run `python3 -m venv .` in terminal. This 
+creates your virtual environment since RPi cannot download externally managed packages
+through pip.
+
 
 # The five stages of grief
 * face detection

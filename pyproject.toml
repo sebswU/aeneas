@@ -8,6 +8,7 @@ dependencies = [
     "gpiozero",
     "boto3",
     "tello-python>=1.1.6",
+    "deepface",
 ]
 name = "aeneas"
 version = "0.0.1"
