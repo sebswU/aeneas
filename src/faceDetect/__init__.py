@@ -1,1 +1,1 @@
-__all__ = ["motionDetection","camera","signal","camsetup"]
+__all__ = ["motionDetection","camera","signal","camsetup","person"]

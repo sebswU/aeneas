@@ -1,8 +1,7 @@
 import gpiozero
 from gpiozero import MotionSensor, LED
 from time import sleep
-from camera import activate, settingup
-import picamera2
+from camera import testActivate, settingup
 from picamera2 import Picamera2
 """
 GPIO: 
@@ -35,7 +34,7 @@ while True:
     pir.wait_for_motion()
     print("motion detected")
 
-    testActivate()
+    testActivate(picam2)
     red.off()
     white.on()
     sleep(2)

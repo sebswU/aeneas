@@ -1,7 +1,9 @@
 import os
 import sys
 
-userNum = 0
+userNum = 0 
+personList = []
+#when a new person is created, this should already be the right number
 
 class Person():
     """
@@ -15,12 +17,19 @@ class Person():
     imgID attribute.
     """
     def __init__(self, name):
-        if userNum < 9:
-            self.imgID = 'user0' + userNum
+        if userNum > 99:
+            pass
         else:
-            self.imgID = 'user' + userNum
+            if userNum < 9:
+                self.imgID = 'user0' + (userNum)
+            else:
+                self.imgID = 'user' + (userNum)
+
+        
 
         self.name = name
+        userNum += 1
+        personList.append(self)
 
     def getName(self):
         return self.name
