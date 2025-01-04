@@ -1,5 +1,6 @@
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import HTMLResponse
+from paho.mqtt.client import Client
 
 #------------REST API Stuff-------------------------------------
 
@@ -22,7 +23,8 @@ async def websocket_endpoint(websocket: WebSocket):
         data = await websocket.receive_json(mode='text')
         await websocket.send_text(f"Message text was: {data["ls"][4]}")
 
-#---------------Basic Websocket Comms---------------------------
-        
+#---------------MQTT CLIENT STUFF---------------------------
+    
+
 
 
