@@ -4,7 +4,7 @@ from paho.mqtt.reasoncodes import ReasonCode
 from paho.mqtt.client import Client, MQTTMessage, Properties, ConnectFlags
 from  decouple import config
 from paho.mqtt import client as mqtt_client
-import time
+import time, logging
 
 #------------REST API Stuff-------------------------------------
 
@@ -29,13 +29,19 @@ async def websocket_endpoint(websocket: WebSocket):
 
 #---------------MQTT CLIENT STUFF---------------------------
         
-def mqttc(args=None, helpers=None) -> None:
+def mqttc(message: str=None) -> None:
     """
     Source for clients on MQTT system to run.
 
     Connects to broker, then receives messages on a forever loop
     """
+
+    #diagnostics
+    logging.basicConfig(level=logging.DEBUG)
+
+    #create client instance
     client = Client(mqtt_client.CallbackAPIVersion.VERSION2, client_id="buster")
+    client.enable_logger()
     client.on_connect = on_connect
     client.on_message = on_message
     client.on_subscribe = subscribe_callback
@@ -57,18 +63,24 @@ def mqttc(args=None, helpers=None) -> None:
     msg_info = client.publish("topic/state", "hello world", qos=1)
     unp_pub.add(msg_info.mid)
 
-    msg_info_2 = client.publish("topic/state", "hello world 2", qos=1)
-    unp_pub.add(msg_info_2.mid)
-
     while len(unp_pub):
         time.sleep(0.1)
 
     # solution to race-condition problem
     msg_info.wait_for_publish()
-    msg_info_2.wait_for_publish()
 
-    client.disconnect()
-    client.loop_stop()
+
+    if message != None:
+        main_msg = client.publish("topic/state", message, qos=1)
+        unp_pub.add(main_msg.mid)
+        while len(unp_pub):
+            time.sleep(0.1)
+        
+        main_msg.wait_for_publish()
+
+
+    client.loop_forever()
+
 
 
 
@@ -133,6 +145,7 @@ def publish_callback(client: Client, userdata,
 
 
     print(f"published to topic with reason code {reason_code}")
+
 
 
 
