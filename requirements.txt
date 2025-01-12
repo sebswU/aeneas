@@ -1,0 +1,16 @@
+av==13.1.0
+boto3==1.35.41
+botocore==1.35.41
+colorzero==2.0
+djitellopy==2.5.0
+gpiozero==2.0.1
+jmespath==1.0.1
+numpy==2.1.2
+opencv-contrib-python==4.10.0.84
+opencv-python==4.10.0.84
+pillow==11.0.0
+python-dateutil==2.9.0.post0
+s3transfer==0.10.3
+setuptools==75.1.0
+six==1.16.0
+urllib3==2.2.3
