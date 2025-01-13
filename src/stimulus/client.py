@@ -11,9 +11,8 @@ import time, logging
 """
 These are active when the FastAPI server is called. 
 """
-
+"""
 app = FastAPI()
-
 
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
@@ -26,6 +25,10 @@ async def websocket_endpoint(websocket: WebSocket):
     while True:
         data = await websocket.receive_json(mode='text')
         await websocket.send_text(f"Message text was: {data["ls"][4]}")
+"""
+
+
+
 
 #---------------MQTT CLIENT STUFF---------------------------
         
@@ -50,17 +53,16 @@ def mqttc(message: str=None) -> None:
     unp_pub = set()
 
     client.user_data_set(unp_pub)
-    client.connect("127.0.0.1",port=1883) 
+    client.connect(host=config("MAC_IP"),port=1883) 
     """
-    client.connect(host=config("BUSTER_IP"),port=1883)
+    MAC - Broker (My laptop)
+    BUSTER - handles web server and electronic peripherals
+    ADDIE/JET - handles motion sensor and camera
     """
 
-    client.loop_start()
+    client.subscribe("topic/state")
 
-
-    #client.subscribe("topic/state")
-
-    msg_info = client.publish("topic/state", "hello world", qos=1)
+    msg_info = client.publish("topic/state", "buster joined", qos=1)
     unp_pub.add(msg_info.mid)
 
     while len(unp_pub):
