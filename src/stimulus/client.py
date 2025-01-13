@@ -1,5 +1,5 @@
-from fastapi import FastAPI, WebSocket
-from fastapi.responses import HTMLResponse
+#from fastapi import FastAPI, WebSocket
+#from fastapi.responses import HTMLResponse
 from paho.mqtt.reasoncodes import ReasonCode
 from paho.mqtt.client import Client, MQTTMessage, Properties, ConnectFlags
 from  decouple import config
