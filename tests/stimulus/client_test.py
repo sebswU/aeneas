@@ -1,7 +1,11 @@
+import sys
+import os
 import unittest
 import pytest
 
-from stimulus.client import Client, MQTTMessage, Properties, ConnectFlags
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src')))
+
+from stimulus.callbacks import Client, MQTTMessage, Properties, ConnectFlags
 
 def test_mqtt_client():
     from stimulus.client import mqtt_client

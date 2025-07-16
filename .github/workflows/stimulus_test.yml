@@ -4,10 +4,12 @@ name: MQTT Project CI
 
 on:
   push:
-    branches: [ main ]
+    branches:  
+      - stimulus
   pull_request:
-    branches: [ main ]
-
+    branches:  
+      - stimulus
+      
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -28,4 +30,4 @@ jobs:
 
     - name: Run MQTT tests
       run: |
-        pytest tests/
+        pytest tests/stimulus
